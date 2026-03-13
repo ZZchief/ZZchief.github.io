@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            /* Creates exactly 5 equal-width columns for 5 images per row */
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            /* Keeps the images perfectly square */
+            aspect-ratio: 1 / 1;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background-color: #ddd;
+            /* placeholder color while loading */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Basic responsiveness for smaller screens */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>10 Image Gallery</h1>
+
+    <div class="gallery" id="gallery">
+        <!-- Replace "placeholder.jpg" with your actual image paths -->
+        <img src="placeholder.jpg" alt="Photo 1">
+        <img src="placeholder.jpg" alt="Photo 2">
+        <img src="placeholder.jpg" alt="Photo 3">
+        <img src="placeholder.jpg" alt="Photo 4">
+        <img src="placeholder.jpg" alt="Photo 5">
+        <img src="placeholder.jpg" alt="Photo 6">
+        <img src="placeholder.jpg" alt="Photo 7">
+        <img src="placeholder.jpg" alt="Photo 8">
+        <img src="placeholder.jpg" alt="Photo 9">
+        <img src="placeholder.jpg" alt="Photo 10">
+    </div>
+</body>
+
+</html>
